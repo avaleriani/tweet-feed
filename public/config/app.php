@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://scotch.dev',
+    'url' => 'http://agustinvaleriani.com',
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', 'SomeRandomString'),
+    'key' => env('APP_KEY', '4gh2o3i4gt23p4ugb212iug40283gyrbsdfd'),
 
     'cipher' => 'AES-256-CBC',
 

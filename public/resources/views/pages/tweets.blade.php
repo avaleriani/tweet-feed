@@ -1,15 +1,9 @@
-@extends('pages.main')
-@section('tweet')
-
-    <div class="container">
-        <div class="col-sm-offset-2 col-sm-8">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <div class="tweet-embed">
-                        {!!  $tweet !!}
-                    </div>
-                </div>
-            </div>
-        </div>
+@foreach($tweets as $index =>$tweet)
+    <div class="tweet">
+        <span class="tweet-image"><img src="{!! $tweet->user->profile_image_url !!}" alt="user-image"/></span>
+        <span class="tweet-text">{!! $tweet->text !!}</span>
     </div>
-@stop
+    @if ($index != count($tweets) -1)
+        <hr class="separator">
+    @endif
+@endforeach

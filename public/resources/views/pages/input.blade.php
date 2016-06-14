@@ -1,34 +1,25 @@
 @extends('pages.main')
 @section('input')
-
-    <div class="container">
-        <div class="col-sm-offset-2 col-sm-8">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <form action="/getTweets" method="POST" class="form-horizontal">
-                        {!! csrf_field() !!}
-
-                                <!-- Task Name -->
-                        <div class="form-group">
-                            <label for="task" class="col-sm-3 control-label">Task</label>
-
-                            <div class="col-sm-6">
-                                <input type="text" name="name" id="task-name" class="form-control">
-                            </div>
-                        </div>
-
-                        <!-- Add Task Button -->
-                        <div class="form-group">
-                            <div class="col-sm-offset-3 col-sm-6">
-                                <button type="submit" class="btn btn-default">
-                                    <i class="fa fa-plus"></i> Add Task
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form method="POST" id="tw-search" class="form-horizontal">
+                <div class="form-group">
+                    <div class="title">Tweets</div>
+                    <div id="content">
+                        <input type="text" placeholder="Username" name="screen_name" id="screen_name"
+                               class="form-control">
+                        <div><label class="error"></label></div>
+                    </div>
                 </div>
-            </div>
+
+                <div class="form-group located-bottom">
+                    <hr class="separator">
+                    <button type="submit" id="more-btn" class="btn btn-default btn-tweets"> Get Timeline!</button>
+                    <div id="loading"></div>
+                </div>
+                <input type="hidden" name="twName" id="twName" value="">
+                <input type="hidden" name="twMax" id="twMax" value="">
+            </form>
         </div>
     </div>
 @stop

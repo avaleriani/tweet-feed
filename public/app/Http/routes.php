@@ -1,16 +1,13 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /**
  * Show Index
  */
-Route::get('/', 'TwitterController@index')->name('index');
+Route::get('/', 'TwitterController@index');
 
 
 /**
  * Fetch user timeline
  */
-Route::post('/getTweets', function (Request $request) {
-	return redirect('/fetch/');
-});
+Route::post('/getTweets', 'TwitterController@getTweets');
+Route::post('/getMoreTweets', 'TwitterController@getMoreTweets');

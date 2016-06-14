@@ -1,13 +1,7 @@
 /*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
 
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
 /* ==========================================================================
-   Base styles: opinionated defaults
+   Base styles:
    ========================================================================== */
 
 html {
@@ -15,14 +9,6 @@ html {
     font-size: 1em;
     line-height: 1.4;
 }
-
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
- */
 
 ::-moz-selection {
     background: #b3d4fc;
@@ -34,24 +20,13 @@ html {
     text-shadow: none;
 }
 
-/*
- * A better looking default horizontal rule
- */
-
 hr {
     display: block;
     height: 1px;
     border: 0;
     border-top: 1px solid #ccc;
-    margin: 1em 0;
     padding: 0;
 }
-
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
 
 audio,
 canvas,
@@ -62,27 +37,15 @@ video {
     vertical-align: middle;
 }
 
-/*
- * Remove default fieldset styles.
- */
-
 fieldset {
     border: 0;
     margin: 0;
     padding: 0;
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
-
 textarea {
     resize: vertical;
 }
-
-/* ==========================================================================
-   Browser Upgrade Prompt
-   ========================================================================== */
 
 .browserupgrade {
     margin: 0.2em 0;
@@ -92,72 +55,12 @@ textarea {
 }
 
 /* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-@import url(http://fonts.googleapis.com/css?family=Roboto|Varela+Round);
-body {
-    background: #ffd464;
-    text-align: center;
-    color: #FFF;
-    font-family: "Roboto", sans-serif;
-}
-h1 {
-    font-size: 6em;
-    font-weight: bold;
-    margin-top: 1em;
-}
-
-#button {
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    background: #F44336;
-    border-radius: .1em;
-    font-size: 1.80em;
-    color: #FFF;
-    padding: 0 1.40em;
-    cursor: pointer;
-    box-shadow: 0 .1em .3em 0 rgba(0, 0, 0, 0.26);
-}
-#button:hover {
-    box-shadow: inset 0 .5em .8em 0 rgba(255,255,255,0.2);
-}
-#button:active {
-    box-shadow: 0 .5em .8em 0 rgba(0, 0, 0, 0.3);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ==========================================================================
    Helper classes
    ========================================================================== */
-
-/*
- * Hide visually and from screen readers:
- */
 
 .hidden {
     display: none !important;
 }
-
-/*
- * Hide only visually, but have it available for screen readers:
- * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- */
 
 .visuallyhidden {
     border: 0;
@@ -170,12 +73,6 @@ h1 {
     width: 1px;
 }
 
-/*
- * Extends the .visuallyhidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
     clip: auto;
@@ -186,25 +83,9 @@ h1 {
     width: auto;
 }
 
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
 .invisible {
     visibility: hidden;
 }
-
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
 
 .clearfix:before,
 .clearfix:after {
@@ -216,99 +97,68 @@ h1 {
     clear: both;
 }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
-
 @media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-}
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
 
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   http://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
+    @media print {
+        *,
+        *:before,
+        *:after {
+            background: transparent !important;
+            color: #000 !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
+        }
 
-@media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster:
-                                   http://www.sanbeiji.com/archives/953 */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
+        a,
+        a:visited {
+            text-decoration: underline;
+        }
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
+        a[href]:after {
+            content: " (" attr(href) ")";
+        }
 
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
+        abbr[title]:after {
+            content: " (" attr(title) ")";
+        }
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
+        a[href^="#"]:after,
+        a[href^="javascript:"]:after {
+            content: "";
+        }
 
-    /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
+        pre,
+        blockquote {
+            border: 1px solid #999;
+            page-break-inside: avoid;
+        }
 
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
+        thead {
+            display: table-header-group;
+        }
 
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
+        tr,
+        img {
+            page-break-inside: avoid;
+        }
 
-    /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
+        img {
+            max-width: 100% !important;
+        }
 
-    thead {
-        display: table-header-group;
-    }
+        p,
+        h2,
+        h3 {
+            orphans: 3;
+            widows: 3;
+        }
 
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
+        h2,
+        h3 {
+            page-break-after: avoid;
+        }
     }
 }
-
-
-/* SEPARATOR */
